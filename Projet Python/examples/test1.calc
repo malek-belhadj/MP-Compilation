@@ -1,0 +1,28 @@
+# This is a test program
+x = 10
+y = 5
+
+# Calculate some values
+z = x + y * 2
+
+# Conditional statement
+if z > 20 then
+    print("z is greater than 20")
+else
+    print("z is not greater than 20")
+endif
+
+# Loop structure
+for i = 1 to 5 do
+    print(i)
+endfor
+
+# While loop example
+counter = 3
+while counter > 0 do
+    print("Countdown: ")
+    print(counter)
+    counter = counter - 1
+endwhile
+
+print("Done!")

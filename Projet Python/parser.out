@@ -1,0 +1,1538 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COMMA
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement
+Rule 2     program -> program statement
+Rule 3     statement -> assignment
+Rule 4     statement -> if_statement
+Rule 5     statement -> for_statement
+Rule 6     statement -> while_statement
+Rule 7     statement -> print_statement
+Rule 8     assignment -> ID EQUALS expression
+Rule 9     if_statement -> IF condition THEN program ENDIF
+Rule 10    if_statement -> IF condition THEN program ELSE program ENDIF
+Rule 11    for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR
+Rule 12    while_statement -> WHILE condition DO program ENDWHILE
+Rule 13    print_statement -> PRINT LPAREN expression RPAREN
+Rule 14    condition -> expression GT expression
+Rule 15    condition -> expression LT expression
+Rule 16    condition -> expression GE expression
+Rule 17    condition -> expression LE expression
+Rule 18    condition -> expression EQ expression
+Rule 19    condition -> expression NE expression
+Rule 20    expression -> expression PLUS expression
+Rule 21    expression -> expression MINUS expression
+Rule 22    expression -> expression TIMES expression
+Rule 23    expression -> expression DIVIDE expression
+Rule 24    expression -> LPAREN expression RPAREN
+Rule 25    expression -> NUMBER
+Rule 26    expression -> STRING
+Rule 27    expression -> ID
+Rule 28    expression -> MINUS expression
+
+Terminals, with rules where they appear
+
+COMMA                : 
+DIVIDE               : 23
+DO                   : 11 12
+ELSE                 : 10
+ENDFOR               : 11
+ENDIF                : 9 10
+ENDWHILE             : 12
+EQ                   : 18
+EQUALS               : 8 11
+FOR                  : 11
+GE                   : 16
+GT                   : 14
+ID                   : 8 11 27
+IF                   : 9 10
+LE                   : 17
+LPAREN               : 13 24
+LT                   : 15
+MINUS                : 21 28
+NE                   : 19
+NUMBER               : 25
+PLUS                 : 20
+PRINT                : 13
+RPAREN               : 13 24
+STRING               : 26
+THEN                 : 9 10
+TIMES                : 22
+TO                   : 11
+WHILE                : 12
+error                : 
+
+Nonterminals, with rules where they appear
+
+assignment           : 3
+condition            : 9 10 12
+expression           : 8 11 11 13 14 14 15 15 16 16 17 17 18 18 19 19 20 20 21 21 22 22 23 23 24 28
+for_statement        : 5
+if_statement         : 4
+print_statement      : 7
+program              : 2 9 10 10 11 12 0
+statement            : 1 2
+while_statement      : 6
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement
+    (2) program -> . program statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    program                        shift and go to state 1
+    statement                      shift and go to state 2
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 1
+
+    (0) S' -> program .
+    (2) program -> program . statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    statement                      shift and go to state 13
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 2
+
+    (1) program -> statement .
+
+    ID              reduce using rule 1 (program -> statement .)
+    IF              reduce using rule 1 (program -> statement .)
+    FOR             reduce using rule 1 (program -> statement .)
+    WHILE           reduce using rule 1 (program -> statement .)
+    PRINT           reduce using rule 1 (program -> statement .)
+    $end            reduce using rule 1 (program -> statement .)
+    ENDIF           reduce using rule 1 (program -> statement .)
+    ELSE            reduce using rule 1 (program -> statement .)
+    ENDWHILE        reduce using rule 1 (program -> statement .)
+    ENDFOR          reduce using rule 1 (program -> statement .)
+
+
+state 3
+
+    (3) statement -> assignment .
+
+    ID              reduce using rule 3 (statement -> assignment .)
+    IF              reduce using rule 3 (statement -> assignment .)
+    FOR             reduce using rule 3 (statement -> assignment .)
+    WHILE           reduce using rule 3 (statement -> assignment .)
+    PRINT           reduce using rule 3 (statement -> assignment .)
+    $end            reduce using rule 3 (statement -> assignment .)
+    ENDIF           reduce using rule 3 (statement -> assignment .)
+    ELSE            reduce using rule 3 (statement -> assignment .)
+    ENDWHILE        reduce using rule 3 (statement -> assignment .)
+    ENDFOR          reduce using rule 3 (statement -> assignment .)
+
+
+state 4
+
+    (4) statement -> if_statement .
+
+    ID              reduce using rule 4 (statement -> if_statement .)
+    IF              reduce using rule 4 (statement -> if_statement .)
+    FOR             reduce using rule 4 (statement -> if_statement .)
+    WHILE           reduce using rule 4 (statement -> if_statement .)
+    PRINT           reduce using rule 4 (statement -> if_statement .)
+    $end            reduce using rule 4 (statement -> if_statement .)
+    ENDIF           reduce using rule 4 (statement -> if_statement .)
+    ELSE            reduce using rule 4 (statement -> if_statement .)
+    ENDWHILE        reduce using rule 4 (statement -> if_statement .)
+    ENDFOR          reduce using rule 4 (statement -> if_statement .)
+
+
+state 5
+
+    (5) statement -> for_statement .
+
+    ID              reduce using rule 5 (statement -> for_statement .)
+    IF              reduce using rule 5 (statement -> for_statement .)
+    FOR             reduce using rule 5 (statement -> for_statement .)
+    WHILE           reduce using rule 5 (statement -> for_statement .)
+    PRINT           reduce using rule 5 (statement -> for_statement .)
+    $end            reduce using rule 5 (statement -> for_statement .)
+    ENDIF           reduce using rule 5 (statement -> for_statement .)
+    ELSE            reduce using rule 5 (statement -> for_statement .)
+    ENDWHILE        reduce using rule 5 (statement -> for_statement .)
+    ENDFOR          reduce using rule 5 (statement -> for_statement .)
+
+
+state 6
+
+    (6) statement -> while_statement .
+
+    ID              reduce using rule 6 (statement -> while_statement .)
+    IF              reduce using rule 6 (statement -> while_statement .)
+    FOR             reduce using rule 6 (statement -> while_statement .)
+    WHILE           reduce using rule 6 (statement -> while_statement .)
+    PRINT           reduce using rule 6 (statement -> while_statement .)
+    $end            reduce using rule 6 (statement -> while_statement .)
+    ENDIF           reduce using rule 6 (statement -> while_statement .)
+    ELSE            reduce using rule 6 (statement -> while_statement .)
+    ENDWHILE        reduce using rule 6 (statement -> while_statement .)
+    ENDFOR          reduce using rule 6 (statement -> while_statement .)
+
+
+state 7
+
+    (7) statement -> print_statement .
+
+    ID              reduce using rule 7 (statement -> print_statement .)
+    IF              reduce using rule 7 (statement -> print_statement .)
+    FOR             reduce using rule 7 (statement -> print_statement .)
+    WHILE           reduce using rule 7 (statement -> print_statement .)
+    PRINT           reduce using rule 7 (statement -> print_statement .)
+    $end            reduce using rule 7 (statement -> print_statement .)
+    ENDIF           reduce using rule 7 (statement -> print_statement .)
+    ELSE            reduce using rule 7 (statement -> print_statement .)
+    ENDWHILE        reduce using rule 7 (statement -> print_statement .)
+    ENDFOR          reduce using rule 7 (statement -> print_statement .)
+
+
+state 8
+
+    (8) assignment -> ID . EQUALS expression
+
+    EQUALS          shift and go to state 14
+
+
+state 9
+
+    (9) if_statement -> IF . condition THEN program ENDIF
+    (10) if_statement -> IF . condition THEN program ELSE program ENDIF
+    (14) condition -> . expression GT expression
+    (15) condition -> . expression LT expression
+    (16) condition -> . expression GE expression
+    (17) condition -> . expression LE expression
+    (18) condition -> . expression EQ expression
+    (19) condition -> . expression NE expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    condition                      shift and go to state 15
+    expression                     shift and go to state 16
+
+state 10
+
+    (11) for_statement -> FOR . ID EQUALS expression TO expression DO program ENDFOR
+
+    ID              shift and go to state 22
+
+
+state 11
+
+    (12) while_statement -> WHILE . condition DO program ENDWHILE
+    (14) condition -> . expression GT expression
+    (15) condition -> . expression LT expression
+    (16) condition -> . expression GE expression
+    (17) condition -> . expression LE expression
+    (18) condition -> . expression EQ expression
+    (19) condition -> . expression NE expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    condition                      shift and go to state 23
+    expression                     shift and go to state 16
+
+state 12
+
+    (13) print_statement -> PRINT . LPAREN expression RPAREN
+
+    LPAREN          shift and go to state 24
+
+
+state 13
+
+    (2) program -> program statement .
+
+    ID              reduce using rule 2 (program -> program statement .)
+    IF              reduce using rule 2 (program -> program statement .)
+    FOR             reduce using rule 2 (program -> program statement .)
+    WHILE           reduce using rule 2 (program -> program statement .)
+    PRINT           reduce using rule 2 (program -> program statement .)
+    $end            reduce using rule 2 (program -> program statement .)
+    ENDIF           reduce using rule 2 (program -> program statement .)
+    ELSE            reduce using rule 2 (program -> program statement .)
+    ENDWHILE        reduce using rule 2 (program -> program statement .)
+    ENDFOR          reduce using rule 2 (program -> program statement .)
+
+
+state 14
+
+    (8) assignment -> ID EQUALS . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 25
+
+state 15
+
+    (9) if_statement -> IF condition . THEN program ENDIF
+    (10) if_statement -> IF condition . THEN program ELSE program ENDIF
+
+    THEN            shift and go to state 26
+
+
+state 16
+
+    (14) condition -> expression . GT expression
+    (15) condition -> expression . LT expression
+    (16) condition -> expression . GE expression
+    (17) condition -> expression . LE expression
+    (18) condition -> expression . EQ expression
+    (19) condition -> expression . NE expression
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    GT              shift and go to state 27
+    LT              shift and go to state 28
+    GE              shift and go to state 29
+    LE              shift and go to state 30
+    EQ              shift and go to state 31
+    NE              shift and go to state 32
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 17
+
+    (28) expression -> MINUS . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 37
+
+state 18
+
+    (24) expression -> LPAREN . expression RPAREN
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 38
+
+state 19
+
+    (25) expression -> NUMBER .
+
+    GT              reduce using rule 25 (expression -> NUMBER .)
+    LT              reduce using rule 25 (expression -> NUMBER .)
+    GE              reduce using rule 25 (expression -> NUMBER .)
+    LE              reduce using rule 25 (expression -> NUMBER .)
+    EQ              reduce using rule 25 (expression -> NUMBER .)
+    NE              reduce using rule 25 (expression -> NUMBER .)
+    PLUS            reduce using rule 25 (expression -> NUMBER .)
+    MINUS           reduce using rule 25 (expression -> NUMBER .)
+    TIMES           reduce using rule 25 (expression -> NUMBER .)
+    DIVIDE          reduce using rule 25 (expression -> NUMBER .)
+    ID              reduce using rule 25 (expression -> NUMBER .)
+    IF              reduce using rule 25 (expression -> NUMBER .)
+    FOR             reduce using rule 25 (expression -> NUMBER .)
+    WHILE           reduce using rule 25 (expression -> NUMBER .)
+    PRINT           reduce using rule 25 (expression -> NUMBER .)
+    $end            reduce using rule 25 (expression -> NUMBER .)
+    ENDIF           reduce using rule 25 (expression -> NUMBER .)
+    ELSE            reduce using rule 25 (expression -> NUMBER .)
+    ENDWHILE        reduce using rule 25 (expression -> NUMBER .)
+    ENDFOR          reduce using rule 25 (expression -> NUMBER .)
+    RPAREN          reduce using rule 25 (expression -> NUMBER .)
+    THEN            reduce using rule 25 (expression -> NUMBER .)
+    DO              reduce using rule 25 (expression -> NUMBER .)
+    TO              reduce using rule 25 (expression -> NUMBER .)
+
+
+state 20
+
+    (26) expression -> STRING .
+
+    GT              reduce using rule 26 (expression -> STRING .)
+    LT              reduce using rule 26 (expression -> STRING .)
+    GE              reduce using rule 26 (expression -> STRING .)
+    LE              reduce using rule 26 (expression -> STRING .)
+    EQ              reduce using rule 26 (expression -> STRING .)
+    NE              reduce using rule 26 (expression -> STRING .)
+    PLUS            reduce using rule 26 (expression -> STRING .)
+    MINUS           reduce using rule 26 (expression -> STRING .)
+    TIMES           reduce using rule 26 (expression -> STRING .)
+    DIVIDE          reduce using rule 26 (expression -> STRING .)
+    ID              reduce using rule 26 (expression -> STRING .)
+    IF              reduce using rule 26 (expression -> STRING .)
+    FOR             reduce using rule 26 (expression -> STRING .)
+    WHILE           reduce using rule 26 (expression -> STRING .)
+    PRINT           reduce using rule 26 (expression -> STRING .)
+    $end            reduce using rule 26 (expression -> STRING .)
+    ENDIF           reduce using rule 26 (expression -> STRING .)
+    ELSE            reduce using rule 26 (expression -> STRING .)
+    ENDWHILE        reduce using rule 26 (expression -> STRING .)
+    ENDFOR          reduce using rule 26 (expression -> STRING .)
+    RPAREN          reduce using rule 26 (expression -> STRING .)
+    THEN            reduce using rule 26 (expression -> STRING .)
+    DO              reduce using rule 26 (expression -> STRING .)
+    TO              reduce using rule 26 (expression -> STRING .)
+
+
+state 21
+
+    (27) expression -> ID .
+
+    GT              reduce using rule 27 (expression -> ID .)
+    LT              reduce using rule 27 (expression -> ID .)
+    GE              reduce using rule 27 (expression -> ID .)
+    LE              reduce using rule 27 (expression -> ID .)
+    EQ              reduce using rule 27 (expression -> ID .)
+    NE              reduce using rule 27 (expression -> ID .)
+    PLUS            reduce using rule 27 (expression -> ID .)
+    MINUS           reduce using rule 27 (expression -> ID .)
+    TIMES           reduce using rule 27 (expression -> ID .)
+    DIVIDE          reduce using rule 27 (expression -> ID .)
+    ID              reduce using rule 27 (expression -> ID .)
+    IF              reduce using rule 27 (expression -> ID .)
+    FOR             reduce using rule 27 (expression -> ID .)
+    WHILE           reduce using rule 27 (expression -> ID .)
+    PRINT           reduce using rule 27 (expression -> ID .)
+    $end            reduce using rule 27 (expression -> ID .)
+    ENDIF           reduce using rule 27 (expression -> ID .)
+    ELSE            reduce using rule 27 (expression -> ID .)
+    ENDWHILE        reduce using rule 27 (expression -> ID .)
+    ENDFOR          reduce using rule 27 (expression -> ID .)
+    RPAREN          reduce using rule 27 (expression -> ID .)
+    THEN            reduce using rule 27 (expression -> ID .)
+    DO              reduce using rule 27 (expression -> ID .)
+    TO              reduce using rule 27 (expression -> ID .)
+
+
+state 22
+
+    (11) for_statement -> FOR ID . EQUALS expression TO expression DO program ENDFOR
+
+    EQUALS          shift and go to state 39
+
+
+state 23
+
+    (12) while_statement -> WHILE condition . DO program ENDWHILE
+
+    DO              shift and go to state 40
+
+
+state 24
+
+    (13) print_statement -> PRINT LPAREN . expression RPAREN
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 41
+
+state 25
+
+    (8) assignment -> ID EQUALS expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    ID              reduce using rule 8 (assignment -> ID EQUALS expression .)
+    IF              reduce using rule 8 (assignment -> ID EQUALS expression .)
+    FOR             reduce using rule 8 (assignment -> ID EQUALS expression .)
+    WHILE           reduce using rule 8 (assignment -> ID EQUALS expression .)
+    PRINT           reduce using rule 8 (assignment -> ID EQUALS expression .)
+    $end            reduce using rule 8 (assignment -> ID EQUALS expression .)
+    ENDIF           reduce using rule 8 (assignment -> ID EQUALS expression .)
+    ELSE            reduce using rule 8 (assignment -> ID EQUALS expression .)
+    ENDWHILE        reduce using rule 8 (assignment -> ID EQUALS expression .)
+    ENDFOR          reduce using rule 8 (assignment -> ID EQUALS expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 26
+
+    (9) if_statement -> IF condition THEN . program ENDIF
+    (10) if_statement -> IF condition THEN . program ELSE program ENDIF
+    (1) program -> . statement
+    (2) program -> . program statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    program                        shift and go to state 42
+    statement                      shift and go to state 2
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 27
+
+    (14) condition -> expression GT . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 43
+
+state 28
+
+    (15) condition -> expression LT . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 44
+
+state 29
+
+    (16) condition -> expression GE . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 45
+
+state 30
+
+    (17) condition -> expression LE . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 46
+
+state 31
+
+    (18) condition -> expression EQ . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 47
+
+state 32
+
+    (19) condition -> expression NE . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 48
+
+state 33
+
+    (20) expression -> expression PLUS . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 49
+
+state 34
+
+    (21) expression -> expression MINUS . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 50
+
+state 35
+
+    (22) expression -> expression TIMES . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 51
+
+state 36
+
+    (23) expression -> expression DIVIDE . expression
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 52
+
+state 37
+
+    (28) expression -> MINUS expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    GT              reduce using rule 28 (expression -> MINUS expression .)
+    LT              reduce using rule 28 (expression -> MINUS expression .)
+    GE              reduce using rule 28 (expression -> MINUS expression .)
+    LE              reduce using rule 28 (expression -> MINUS expression .)
+    EQ              reduce using rule 28 (expression -> MINUS expression .)
+    NE              reduce using rule 28 (expression -> MINUS expression .)
+    PLUS            reduce using rule 28 (expression -> MINUS expression .)
+    MINUS           reduce using rule 28 (expression -> MINUS expression .)
+    TIMES           reduce using rule 28 (expression -> MINUS expression .)
+    DIVIDE          reduce using rule 28 (expression -> MINUS expression .)
+    ID              reduce using rule 28 (expression -> MINUS expression .)
+    IF              reduce using rule 28 (expression -> MINUS expression .)
+    FOR             reduce using rule 28 (expression -> MINUS expression .)
+    WHILE           reduce using rule 28 (expression -> MINUS expression .)
+    PRINT           reduce using rule 28 (expression -> MINUS expression .)
+    $end            reduce using rule 28 (expression -> MINUS expression .)
+    ENDIF           reduce using rule 28 (expression -> MINUS expression .)
+    ELSE            reduce using rule 28 (expression -> MINUS expression .)
+    ENDWHILE        reduce using rule 28 (expression -> MINUS expression .)
+    ENDFOR          reduce using rule 28 (expression -> MINUS expression .)
+    RPAREN          reduce using rule 28 (expression -> MINUS expression .)
+    THEN            reduce using rule 28 (expression -> MINUS expression .)
+    DO              reduce using rule 28 (expression -> MINUS expression .)
+    TO              reduce using rule 28 (expression -> MINUS expression .)
+
+  ! PLUS            [ shift and go to state 33 ]
+  ! MINUS           [ shift and go to state 34 ]
+  ! TIMES           [ shift and go to state 35 ]
+  ! DIVIDE          [ shift and go to state 36 ]
+
+
+state 38
+
+    (24) expression -> LPAREN expression . RPAREN
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    RPAREN          shift and go to state 53
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 39
+
+    (11) for_statement -> FOR ID EQUALS . expression TO expression DO program ENDFOR
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 54
+
+state 40
+
+    (12) while_statement -> WHILE condition DO . program ENDWHILE
+    (1) program -> . statement
+    (2) program -> . program statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    program                        shift and go to state 55
+    statement                      shift and go to state 2
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 41
+
+    (13) print_statement -> PRINT LPAREN expression . RPAREN
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    RPAREN          shift and go to state 56
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 42
+
+    (9) if_statement -> IF condition THEN program . ENDIF
+    (10) if_statement -> IF condition THEN program . ELSE program ENDIF
+    (2) program -> program . statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ENDIF           shift and go to state 57
+    ELSE            shift and go to state 58
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    statement                      shift and go to state 13
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 43
+
+    (14) condition -> expression GT expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    THEN            reduce using rule 14 (condition -> expression GT expression .)
+    DO              reduce using rule 14 (condition -> expression GT expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 44
+
+    (15) condition -> expression LT expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    THEN            reduce using rule 15 (condition -> expression LT expression .)
+    DO              reduce using rule 15 (condition -> expression LT expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 45
+
+    (16) condition -> expression GE expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    THEN            reduce using rule 16 (condition -> expression GE expression .)
+    DO              reduce using rule 16 (condition -> expression GE expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 46
+
+    (17) condition -> expression LE expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    THEN            reduce using rule 17 (condition -> expression LE expression .)
+    DO              reduce using rule 17 (condition -> expression LE expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 47
+
+    (18) condition -> expression EQ expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    THEN            reduce using rule 18 (condition -> expression EQ expression .)
+    DO              reduce using rule 18 (condition -> expression EQ expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 48
+
+    (19) condition -> expression NE expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    THEN            reduce using rule 19 (condition -> expression NE expression .)
+    DO              reduce using rule 19 (condition -> expression NE expression .)
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 49
+
+    (20) expression -> expression PLUS expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    GT              reduce using rule 20 (expression -> expression PLUS expression .)
+    LT              reduce using rule 20 (expression -> expression PLUS expression .)
+    GE              reduce using rule 20 (expression -> expression PLUS expression .)
+    LE              reduce using rule 20 (expression -> expression PLUS expression .)
+    EQ              reduce using rule 20 (expression -> expression PLUS expression .)
+    NE              reduce using rule 20 (expression -> expression PLUS expression .)
+    PLUS            reduce using rule 20 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 20 (expression -> expression PLUS expression .)
+    ID              reduce using rule 20 (expression -> expression PLUS expression .)
+    IF              reduce using rule 20 (expression -> expression PLUS expression .)
+    FOR             reduce using rule 20 (expression -> expression PLUS expression .)
+    WHILE           reduce using rule 20 (expression -> expression PLUS expression .)
+    PRINT           reduce using rule 20 (expression -> expression PLUS expression .)
+    $end            reduce using rule 20 (expression -> expression PLUS expression .)
+    ENDIF           reduce using rule 20 (expression -> expression PLUS expression .)
+    ELSE            reduce using rule 20 (expression -> expression PLUS expression .)
+    ENDWHILE        reduce using rule 20 (expression -> expression PLUS expression .)
+    ENDFOR          reduce using rule 20 (expression -> expression PLUS expression .)
+    RPAREN          reduce using rule 20 (expression -> expression PLUS expression .)
+    THEN            reduce using rule 20 (expression -> expression PLUS expression .)
+    DO              reduce using rule 20 (expression -> expression PLUS expression .)
+    TO              reduce using rule 20 (expression -> expression PLUS expression .)
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+  ! TIMES           [ reduce using rule 20 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 20 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 33 ]
+  ! MINUS           [ shift and go to state 34 ]
+
+
+state 50
+
+    (21) expression -> expression MINUS expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    GT              reduce using rule 21 (expression -> expression MINUS expression .)
+    LT              reduce using rule 21 (expression -> expression MINUS expression .)
+    GE              reduce using rule 21 (expression -> expression MINUS expression .)
+    LE              reduce using rule 21 (expression -> expression MINUS expression .)
+    EQ              reduce using rule 21 (expression -> expression MINUS expression .)
+    NE              reduce using rule 21 (expression -> expression MINUS expression .)
+    PLUS            reduce using rule 21 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 21 (expression -> expression MINUS expression .)
+    ID              reduce using rule 21 (expression -> expression MINUS expression .)
+    IF              reduce using rule 21 (expression -> expression MINUS expression .)
+    FOR             reduce using rule 21 (expression -> expression MINUS expression .)
+    WHILE           reduce using rule 21 (expression -> expression MINUS expression .)
+    PRINT           reduce using rule 21 (expression -> expression MINUS expression .)
+    $end            reduce using rule 21 (expression -> expression MINUS expression .)
+    ENDIF           reduce using rule 21 (expression -> expression MINUS expression .)
+    ELSE            reduce using rule 21 (expression -> expression MINUS expression .)
+    ENDWHILE        reduce using rule 21 (expression -> expression MINUS expression .)
+    ENDFOR          reduce using rule 21 (expression -> expression MINUS expression .)
+    RPAREN          reduce using rule 21 (expression -> expression MINUS expression .)
+    THEN            reduce using rule 21 (expression -> expression MINUS expression .)
+    DO              reduce using rule 21 (expression -> expression MINUS expression .)
+    TO              reduce using rule 21 (expression -> expression MINUS expression .)
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+  ! TIMES           [ reduce using rule 21 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 21 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 33 ]
+  ! MINUS           [ shift and go to state 34 ]
+
+
+state 51
+
+    (22) expression -> expression TIMES expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    GT              reduce using rule 22 (expression -> expression TIMES expression .)
+    LT              reduce using rule 22 (expression -> expression TIMES expression .)
+    GE              reduce using rule 22 (expression -> expression TIMES expression .)
+    LE              reduce using rule 22 (expression -> expression TIMES expression .)
+    EQ              reduce using rule 22 (expression -> expression TIMES expression .)
+    NE              reduce using rule 22 (expression -> expression TIMES expression .)
+    PLUS            reduce using rule 22 (expression -> expression TIMES expression .)
+    MINUS           reduce using rule 22 (expression -> expression TIMES expression .)
+    TIMES           reduce using rule 22 (expression -> expression TIMES expression .)
+    DIVIDE          reduce using rule 22 (expression -> expression TIMES expression .)
+    ID              reduce using rule 22 (expression -> expression TIMES expression .)
+    IF              reduce using rule 22 (expression -> expression TIMES expression .)
+    FOR             reduce using rule 22 (expression -> expression TIMES expression .)
+    WHILE           reduce using rule 22 (expression -> expression TIMES expression .)
+    PRINT           reduce using rule 22 (expression -> expression TIMES expression .)
+    $end            reduce using rule 22 (expression -> expression TIMES expression .)
+    ENDIF           reduce using rule 22 (expression -> expression TIMES expression .)
+    ELSE            reduce using rule 22 (expression -> expression TIMES expression .)
+    ENDWHILE        reduce using rule 22 (expression -> expression TIMES expression .)
+    ENDFOR          reduce using rule 22 (expression -> expression TIMES expression .)
+    RPAREN          reduce using rule 22 (expression -> expression TIMES expression .)
+    THEN            reduce using rule 22 (expression -> expression TIMES expression .)
+    DO              reduce using rule 22 (expression -> expression TIMES expression .)
+    TO              reduce using rule 22 (expression -> expression TIMES expression .)
+
+  ! PLUS            [ shift and go to state 33 ]
+  ! MINUS           [ shift and go to state 34 ]
+  ! TIMES           [ shift and go to state 35 ]
+  ! DIVIDE          [ shift and go to state 36 ]
+
+
+state 52
+
+    (23) expression -> expression DIVIDE expression .
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    GT              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    LT              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    GE              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    LE              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    EQ              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    NE              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    PLUS            reduce using rule 23 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 23 (expression -> expression DIVIDE expression .)
+    TIMES           reduce using rule 23 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 23 (expression -> expression DIVIDE expression .)
+    ID              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    IF              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    FOR             reduce using rule 23 (expression -> expression DIVIDE expression .)
+    WHILE           reduce using rule 23 (expression -> expression DIVIDE expression .)
+    PRINT           reduce using rule 23 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 23 (expression -> expression DIVIDE expression .)
+    ENDIF           reduce using rule 23 (expression -> expression DIVIDE expression .)
+    ELSE            reduce using rule 23 (expression -> expression DIVIDE expression .)
+    ENDWHILE        reduce using rule 23 (expression -> expression DIVIDE expression .)
+    ENDFOR          reduce using rule 23 (expression -> expression DIVIDE expression .)
+    RPAREN          reduce using rule 23 (expression -> expression DIVIDE expression .)
+    THEN            reduce using rule 23 (expression -> expression DIVIDE expression .)
+    DO              reduce using rule 23 (expression -> expression DIVIDE expression .)
+    TO              reduce using rule 23 (expression -> expression DIVIDE expression .)
+
+  ! PLUS            [ shift and go to state 33 ]
+  ! MINUS           [ shift and go to state 34 ]
+  ! TIMES           [ shift and go to state 35 ]
+  ! DIVIDE          [ shift and go to state 36 ]
+
+
+state 53
+
+    (24) expression -> LPAREN expression RPAREN .
+
+    GT              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    LT              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    GE              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    LE              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    EQ              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    NE              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    PLUS            reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    MINUS           reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    TIMES           reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    DIVIDE          reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    ID              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    IF              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    FOR             reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    WHILE           reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    PRINT           reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    $end            reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    ENDIF           reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    ELSE            reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    ENDWHILE        reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    ENDFOR          reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    RPAREN          reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    THEN            reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    DO              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+    TO              reduce using rule 24 (expression -> LPAREN expression RPAREN .)
+
+
+state 54
+
+    (11) for_statement -> FOR ID EQUALS expression . TO expression DO program ENDFOR
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    TO              shift and go to state 59
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 55
+
+    (12) while_statement -> WHILE condition DO program . ENDWHILE
+    (2) program -> program . statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ENDWHILE        shift and go to state 60
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    statement                      shift and go to state 13
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 56
+
+    (13) print_statement -> PRINT LPAREN expression RPAREN .
+
+    ID              reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    IF              reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    FOR             reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    WHILE           reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    PRINT           reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    $end            reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    ENDIF           reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    ELSE            reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    ENDWHILE        reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+    ENDFOR          reduce using rule 13 (print_statement -> PRINT LPAREN expression RPAREN .)
+
+
+state 57
+
+    (9) if_statement -> IF condition THEN program ENDIF .
+
+    ID              reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    IF              reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    FOR             reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    WHILE           reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    PRINT           reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    $end            reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    ENDIF           reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    ELSE            reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    ENDWHILE        reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+    ENDFOR          reduce using rule 9 (if_statement -> IF condition THEN program ENDIF .)
+
+
+state 58
+
+    (10) if_statement -> IF condition THEN program ELSE . program ENDIF
+    (1) program -> . statement
+    (2) program -> . program statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    program                        shift and go to state 61
+    statement                      shift and go to state 2
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 59
+
+    (11) for_statement -> FOR ID EQUALS expression TO . expression DO program ENDFOR
+    (20) expression -> . expression PLUS expression
+    (21) expression -> . expression MINUS expression
+    (22) expression -> . expression TIMES expression
+    (23) expression -> . expression DIVIDE expression
+    (24) expression -> . LPAREN expression RPAREN
+    (25) expression -> . NUMBER
+    (26) expression -> . STRING
+    (27) expression -> . ID
+    (28) expression -> . MINUS expression
+
+    LPAREN          shift and go to state 18
+    NUMBER          shift and go to state 19
+    STRING          shift and go to state 20
+    ID              shift and go to state 21
+    MINUS           shift and go to state 17
+
+    expression                     shift and go to state 62
+
+state 60
+
+    (12) while_statement -> WHILE condition DO program ENDWHILE .
+
+    ID              reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    IF              reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    FOR             reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    WHILE           reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    PRINT           reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    $end            reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    ENDIF           reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    ELSE            reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    ENDWHILE        reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+    ENDFOR          reduce using rule 12 (while_statement -> WHILE condition DO program ENDWHILE .)
+
+
+state 61
+
+    (10) if_statement -> IF condition THEN program ELSE program . ENDIF
+    (2) program -> program . statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ENDIF           shift and go to state 63
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    statement                      shift and go to state 13
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 62
+
+    (11) for_statement -> FOR ID EQUALS expression TO expression . DO program ENDFOR
+    (20) expression -> expression . PLUS expression
+    (21) expression -> expression . MINUS expression
+    (22) expression -> expression . TIMES expression
+    (23) expression -> expression . DIVIDE expression
+
+    DO              shift and go to state 64
+    PLUS            shift and go to state 33
+    MINUS           shift and go to state 34
+    TIMES           shift and go to state 35
+    DIVIDE          shift and go to state 36
+
+
+state 63
+
+    (10) if_statement -> IF condition THEN program ELSE program ENDIF .
+
+    ID              reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    IF              reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    FOR             reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    WHILE           reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    PRINT           reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    $end            reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    ENDIF           reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    ELSE            reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    ENDWHILE        reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+    ENDFOR          reduce using rule 10 (if_statement -> IF condition THEN program ELSE program ENDIF .)
+
+
+state 64
+
+    (11) for_statement -> FOR ID EQUALS expression TO expression DO . program ENDFOR
+    (1) program -> . statement
+    (2) program -> . program statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    program                        shift and go to state 65
+    statement                      shift and go to state 2
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 65
+
+    (11) for_statement -> FOR ID EQUALS expression TO expression DO program . ENDFOR
+    (2) program -> program . statement
+    (3) statement -> . assignment
+    (4) statement -> . if_statement
+    (5) statement -> . for_statement
+    (6) statement -> . while_statement
+    (7) statement -> . print_statement
+    (8) assignment -> . ID EQUALS expression
+    (9) if_statement -> . IF condition THEN program ENDIF
+    (10) if_statement -> . IF condition THEN program ELSE program ENDIF
+    (11) for_statement -> . FOR ID EQUALS expression TO expression DO program ENDFOR
+    (12) while_statement -> . WHILE condition DO program ENDWHILE
+    (13) print_statement -> . PRINT LPAREN expression RPAREN
+
+    ENDFOR          shift and go to state 66
+    ID              shift and go to state 8
+    IF              shift and go to state 9
+    FOR             shift and go to state 10
+    WHILE           shift and go to state 11
+    PRINT           shift and go to state 12
+
+    statement                      shift and go to state 13
+    assignment                     shift and go to state 3
+    if_statement                   shift and go to state 4
+    for_statement                  shift and go to state 5
+    while_statement                shift and go to state 6
+    print_statement                shift and go to state 7
+
+state 66
+
+    (11) for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .
+
+    ID              reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    IF              reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    FOR             reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    WHILE           reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    PRINT           reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    $end            reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    ENDIF           reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    ELSE            reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    ENDWHILE        reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+    ENDFOR          reduce using rule 11 (for_statement -> FOR ID EQUALS expression TO expression DO program ENDFOR .)
+
