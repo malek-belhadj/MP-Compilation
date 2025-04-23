@@ -8,7 +8,8 @@ int yyerror(char*);
 mot : S '$' {printf("mot correct\n"); getchar(); return 0;} 
 ;
 S : 'a' S 'c' 
-  | 'b' S 'c'
+  | M
+M : 'b' M 'c'
   |
 ;
 %%

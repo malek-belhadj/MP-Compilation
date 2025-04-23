@@ -1,0 +1,2 @@
+Ceci est un texte de test.
+On note quelques nombres comme 123 , a123 n'est pas un nombre et 11.2 est un reel.

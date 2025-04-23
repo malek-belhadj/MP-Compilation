@@ -1,4 +1,0 @@
-Ce n'est pas un nombre binaire
-
-c'est un nombre binaire
-
